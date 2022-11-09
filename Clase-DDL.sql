@@ -20,6 +20,8 @@ PRIMARY KEY (`historial_id`));
 
 #para FK
 ALTER TABLE generation_schema.cliente ADD historial_id INT NOT NULL;
+#PARA ACTUALIZAR TABLA
+ALTER TABLE generation_schema.cliente CHANGE COLUMN nombre nombre_usuario VARCHAR(20);
 #altera la tabla cliente, agrega una relacion que se va a llamar clienteHistorial, que será una foreign key (llamda historial_id) 
 #que hace referencia a la tabla historial y a su id
 ALTER TABLE generation_schema.cliente ADD CONSTRAINT clienteHistorial FOREIGN KEY (historial_id) REFERENCES generation_schema.historial(historial_id);
